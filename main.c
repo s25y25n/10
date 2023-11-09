@@ -4,9 +4,23 @@
 
 int main(void)
 {
-    char std[30] = "happy C programming";
-    
-    printf("문자열 \"%s\"의 길이 : %i \n",std, strlen(std));
+    int i ;
+    char a[100];
+    FILE* fp;
+    //1. open file
+    fp = fopen("sample.txt", "w");
+    //2. write file
+    for(i=0;i<3;i++) {
+        //print "input a word"
+        printf("input a word : ");
+        //scanf a string 
+        scanf("%s", a);
+        //fprintf
+        fprintf(fp, "%s\n", a);
+        
+                     }
+   //close file
+   fclose(fp);
 
     
   system("PAUSE");	
