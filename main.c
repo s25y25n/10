@@ -4,22 +4,21 @@
 
 int main(void)
 {
-    int i ;
-    char a[100];
+    int n;
+    char c;
     FILE* fp;
-    //1. open file
-    fp = fopen("sample.txt", "w");
-    //2. write file
-    for(i=0;i<3;i++) {
-        //print "input a word"
-        printf("input a word : ");
-        //scanf a string 
-        scanf("%s", a);
-        //fprintf
-        fprintf(fp, "%s\n", a);
-        
-                     }
-   //close file
+    
+    fp = fopen("sample.txt","r");
+    if (fp == NULL) 
+    {
+           printf("failed to open\n");
+       }
+       
+    while( (c=fgetc(fp)) != EOF) //한글자 입력 
+    {
+        putchar(c); // 한글자 출력 
+    }
+   
    fclose(fp);
 
     
